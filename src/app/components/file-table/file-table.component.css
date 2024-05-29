@@ -1,0 +1,14 @@
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.search-bar {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-bar input {
+  width: 300px;
+}

@@ -1,0 +1,56 @@
+<div class="table-container">
+  <div class="search-bar">
+    <input matInput (keyup)="applyFilter($event)" placeholder="Search">
+  </div>
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+
+    <!-- Filename Column -->
+    <ng-container matColumnDef="filename">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Filename</th>
+      <td mat-cell *matCellDef="let element">{{element.filename}}</td>
+    </ng-container>
+
+    <!-- Source Folder Column -->
+    <ng-container matColumnDef="src_folder">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Source Folder</th>
+      <td mat-cell *matCellDef="let element">{{element.src_folder}}</td>
+    </ng-container>
+
+    <!-- Destination Folder Column -->
+    <ng-container matColumnDef="dest_folder">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Destination Folder</th>
+      <td mat-cell *matCellDef="let element">{{element.dest_folder}}</td>
+    </ng-container>
+
+    <!-- Moved At Column -->
+    <ng-container matColumnDef="moved_at">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Moved At</th>
+      <td mat-cell *matCellDef="let element">{{element.moved_at | date}}</td>
+    </ng-container>
+
+    <!-- Is Moved Column -->
+    <ng-container matColumnDef="isMoved">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Is Moved</th>
+      <td mat-cell *matCellDef="let element">{{element.isMoved}}</td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button (click)="deleteRecord(element.id)">Delete</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[7, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

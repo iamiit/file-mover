@@ -1,0 +1,64 @@
+/* Your custom styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .logo h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  
+  main.main-content {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .form-container, .table-container {
+    width: 100%;
+  }
+  
+  footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+  
+  /* Ensure the main content grows to take up available space */
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+  }
+  

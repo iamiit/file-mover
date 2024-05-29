@@ -1,0 +1,26 @@
+<div>
+    <form [formGroup]="moveForm" (ngSubmit)="moveFiles()" class="move-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Source Folder</mat-label>
+        <input matInput formControlName="srcFolder" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Destination Folder</mat-label>
+        <input matInput formControlName="destFolder" required>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Cutoff Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="cutoffDate" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+      <div class="button-group">
+        <button mat-raised-button color="primary" type="submit">Move Files</button>
+        <button mat-raised-button color="warn" type="button" (click)="resetForm()">Reset</button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,19 @@
+.move-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .move-form mat-form-field {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .button-group {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
